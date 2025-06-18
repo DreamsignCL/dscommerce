@@ -1,0 +1,21 @@
+/*------- BASE -------*/
+$dark: #000000;
+$gray-100: #dee2e6;
+
+/*------- VARIANTS -------*/
+
+/* Default */
+$primary: var(--color-primary);
+$secondary: var(--color-secondary);
+$success: var(--color-success);
+$danger: var(--color-danger);
+$warning: var(--color-warning);
+$info: var(--color-info);
+
+/* Hover */
+$primary-hover: var(--color-primary-hover);
+$secondary-hover: var(--color-secondary-hover);
+$success-hover: var(--color-success-hover);
+$danger-hover: var(--color-danger-hover);
+$warning-hover: var(--color-warning-hover);
+$info-hover: var(--color-info-hover);

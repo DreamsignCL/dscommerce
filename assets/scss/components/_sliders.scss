@@ -1,0 +1,91 @@
+@use '../abstracts' as *;
+
+.slider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &.slider--home{
+        height: 100vh;
+        
+        .slider__slides{
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            
+            .slider__slide{
+                min-width: 100%;
+                height: 100vh;
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    
+        .slider__button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 2;
+    
+            &.slider__button--prev-slide{
+                left: 10px;
+            }
+    
+            &.slider__button--next-slide{
+                right: 10px;
+            }
+        }
+    }
+
+    &.slider--clients{
+        padding: 2rem 0;
+
+        .slider__slides{
+            display: flex;
+            gap: 2.5rem;
+            animation: scrollClientes 25s ease-in-out infinite;
+
+            .slider__slide{
+                flex: 0 0 auto;
+                width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    filter: grayscale(100%);
+                    transition: filter 0.3s ease;
+
+                    &:hover{
+                        filter: grayscale(0%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes scrollClientes {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+
+.container {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    @include MQ(MD) {
+        max-width: 768px;
+    }
+    @include MQ(LG) {
+        max-width: 992px;
+    }
+    @include MQ(XL) {
+        max-width: 1200px;
+    }
+    @include MQ(XXL) {
+        max-width: 1408px;
+    }
+}

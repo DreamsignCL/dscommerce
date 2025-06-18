@@ -1,0 +1,143 @@
+@use '../abstracts' as *;
+
+$box-shadow: -6px 0px 19px -6px rgba(0,0,0,0.42);
+
+.main-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    padding: 1rem .5rem 2rem .5rem;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 3;
+    width: 240px;
+
+    .main-nav__header{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+    }
+
+    .main-nav__list{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        .main-nav__item{
+            flex: 1;
+            list-style: none;
+            margin-bottom: 1rem;
+
+            .main-nav__link{
+                display: block;
+                font-size: 1.2rem;
+                color: var(--text-color-site);
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            &.active{
+                .main-nav__link{
+                    color: $primary;
+                }
+            }
+        }
+
+        & > .main-nav__item:last-child{
+            .main-nav__link{
+                background-color: $primary;
+                color: #fff;
+                border: 1px solid transparent;
+                padding: .5rem 1rem;
+
+                &:hover{
+                    background-color: #fff;
+                    color: $primary;
+                    border: 1px solid $primary;
+                }
+            }
+        }
+
+        .main-nav__sublist{
+            display: none;
+        }
+    }
+
+    &.active{
+        transform: translateX(0);
+        -webkit-box-shadow: $box-shadow;
+        -moz-box-shadow: $box-shadow;
+        box-shadow: $box-shadow;
+    }
+    
+    @include MQ(MD){
+        position: relative;
+        height: auto;
+        padding: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        transform: none;
+
+        .main-nav__header{
+            display: none;
+        }
+
+        .main-nav__list{
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+            .main-nav__item{
+                margin-left: 1rem;
+                margin-bottom: 0;
+
+                .main-nav__link{
+                    font-size: 1rem;
+                }
+
+                &.main-nav__item--has-children{
+                    .main-nav__link{
+                        display: flex;
+                        align-items: center;
+                        
+                        &::after{
+                            margin-left: 0.255em;
+                            vertical-align: 0.255em;
+                            content: "";
+                            border-top: 0.3em solid;
+                            border-right: 0.3em solid transparent;
+                            border-bottom: 0px;
+                            border-left: 0.3em solid transparent;
+                        }
+                    }
+
+                    .main-nav__sublist{
+                        position: absolute;
+                        
+                        .main-nav__link{
+                            background-color: $primary;
+                            padding: .7rem 1rem;
+
+                            &::after{display: none;}
+
+                            &:hover{
+                                background-color: #fff;
+                                color: $primary;
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        .main-nav__sublist{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

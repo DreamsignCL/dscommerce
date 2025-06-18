@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+.single-layout{
+    .single-layout__thumbnail{
+        img{
+            width: 100%;
+        }
+    }
+
+    .single-layout__header{
+        margin-bottom: 1rem;
+
+        .single-layout__title{
+            font-size: 2rem;
+        }
+        
+        .single-layout__info{
+            time{
+                display: block;
+                margin-bottom: .5rem;
+            }
+        }
+    }
+
+    .single-layout__body{
+        margin-bottom: 1rem;
+    }
+
+    hr{
+        margin-bottom: 1rem;
+    }
+
+}

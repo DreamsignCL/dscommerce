@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.row{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    .column{
+        flex: 1;
+    }
+
+    @include MQ(MD){
+        flex-direction: row;
+        justify-content: space-between;
+
+        .column {
+            width: auto;
+            padding: 0 1rem;
+
+            &:first-child{
+                padding: 0 1rem 0 0;
+            }
+
+            &:last-child{
+                padding: 0 0 0 1rem;
+            }
+        }
+    }
+}

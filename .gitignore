@@ -1,0 +1,27 @@
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos de caché o build (si usas alguna herramienta frontend)
+node_modules/
+dist/
+build/
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Archivos de editor (VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+
+# Archivos PHP de backup o temporales
+*.bak
+*.tmp
+*.swp
+
+# Archivos de sistema o generados por herramientas de control de versiones
+*.orig

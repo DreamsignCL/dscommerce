@@ -1,0 +1,15 @@
+{
+  "name": "dscommerce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "npx sass assets/scss:assets/css --no-source-map --style=compressed --watch --quiet-deps"
+  },
+  "keywords": [],
+  "author": "Dreamsign©",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.89.0"
+  }
+}

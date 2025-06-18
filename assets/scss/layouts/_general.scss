@@ -1,0 +1,131 @@
+@use '../abstracts' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--background-color-site);
+    color: var(--text-color-site);
+    font-family: var(--font-family-site), "san-serif";
+
+    &.home,
+    &.archive,
+    &.page,
+    &.post{
+        main{
+            padding-top: 8.5rem;
+        }
+    }
+}
+
+a,
+button,
+.btn{
+    -webkit-transition: .2s ease-in-out all;
+    -o-transition: .2s ease-in-out all;
+    transition: .2s ease-in-out all;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    background-color: var(--background-color-header);
+    color: var(--text-color-header);
+    -webkit-box-shadow: 0px 3px 30px -8px rgba(0,0,0,0.53);
+    -moz-box-shadow: 0px 3px 30px -8px rgba(0,0,0,0.53);
+    box-shadow: 0px 3px 30px -8px rgba(0,0,0,0.53);
+    
+    a{
+        color: var(--link-color-header);
+
+        &:hover{
+            color: var(--link-hover-color-header);
+        }
+    }
+    
+    .top-bar{
+        display: flex;
+        justify-content: flex-end;
+        padding: .5rem 0;
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .site-logo{
+            a{
+                display: block;
+
+                img{
+                    width: 100%;
+                    max-width: 120px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    background-color: var(--background-color-footer);
+    color: var(--text-color-footer);
+    padding: 2rem 0;
+
+    .footer{
+        h4{
+            color: var(--text-color-footer);
+        }
+        
+        a{
+            color: var(--link-color-footer);
+
+            &:hover{
+                color: var(--link-hover-color-footer);
+            }
+        }
+
+        .pay-methods-image{
+            width: 100%;
+        }
+    }
+}
+
+@include MQ(MD){
+    body{
+        &.home,
+        &.archive,
+        &.page,
+        &.post{
+            main{
+                padding-top: 6rem;
+            }
+        }
+    }
+
+    footer{
+        .footer{
+            .pay-methods-image{
+                max-width: 200px;
+            }
+        }
+    }
+}

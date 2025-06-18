@@ -1,0 +1,101 @@
+@use '../abstracts' as *;
+
+.card{
+    display: block;
+    border: 1px solid $gray-100;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 1rem;
+    
+    .card__image{
+        figure{
+            overflow: hidden;
+            display: block;
+            position: relative;
+            height: 200px;
+            
+            img{
+                width: 120%;
+                height: auto;
+                transition: transform 0.8s ease;
+                transform: translateX(-10%);
+            }
+        }
+    }
+
+    .card__body{
+        padding: .5rem 1rem 1rem 1rem;
+        font-size: 1rem;
+
+        .card__title{
+            font-size: 1.2rem;
+        }
+
+        p{margin-bottom: .5rem;}
+    }
+
+    &:hover{
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        .card__image{
+            figure{
+                img{
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+
+    &.card--horizontal{
+        display: flex;
+        justify-content: space-between;
+
+        .card__image{
+            figure{
+                width: 120px;
+                height: 100%;
+                max-height: 130px;
+
+                img{
+                    width: auto;
+                    height: 120%;
+                }
+            }
+        }
+
+        .card__body{
+            font-size: .875rem;
+
+            .card__title{
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @include MQ(MD){
+        margin-bottom: 0;
+    }
+}
+
+/*Buttons & Links versions*/
+
+button.card{
+    all: unset;
+    cursor: pointer;
+    text-align: left;
+    border: 1px solid $gray-100;
+    border-radius: 7px;
+    transition: box-shadow 0.3s ease;
+}
+
+a.card{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    &:focus-visible{
+        outline: 2px solid #005fcc;
+        outline-offset: 4px;
+    }
+}
