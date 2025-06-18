@@ -1,0 +1,2 @@
+# dscommerce
+Wordpress template
